@@ -20,16 +20,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="Button_0_0" Click="Button_Click" Grid.Row="0" Grid.Column="0"/>
-        <Button x:Name="Button_1_0" Click="Button_Click" Grid.Row="1" Grid.Column="0"/>
-        <Button x:Name="Button_2_0" Click="Button_Click" Grid.Row="2" Grid.Column="0"/>
-        <Button x:Name="Button_0_1" Click="Button_Click" Grid.Row="0" Grid.Column="1"/>
-        <Button x:Name="Button_1_1" Click="Button_Click" Grid.Row="1" Grid.Column="1"/>
-        <Button x:Name="Button_2_1" Click="Button_Click" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="Button_0_2" Click="Button_Click" Grid.Row="0" Grid.Column="2"/>
-        <Button x:Name="Button_1_2" Click="Button_Click" Grid.Row="1" Grid.Column="2"/>
-        <Button x:Name="Button_2_2" Click="Button_Click" Grid.Row="2" Grid.Column="2"/>
-        <TextBlock x:Name="Player1Score" Grid.Row="3" Grid.Column="0" FontSize="20px" FontWeight="Bold" FontFamily="Comic Sans Ms" Margin="5,0,0,0" Grid.RowSpan="2"/>
-        <TextBlock x:Name="Player2Score" Grid.Row="3" Grid.Column="2" FontSize="20px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_0_0" Click="Button_Click" Grid.Row="0" Grid.Column="0" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_1_0" Click="Button_Click" Grid.Row="1" Grid.Column="0" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_2_0" Click="Button_Click" Grid.Row="2" Grid.Column="0" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_0_1" Click="Button_Click" Grid.Row="0" Grid.Column="1" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_1_1" Click="Button_Click" Grid.Row="1" Grid.Column="1" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_2_1" Click="Button_Click" Grid.Row="2" Grid.Column="1" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_0_2" Click="Button_Click" Grid.Row="0" Grid.Column="2" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_1_2" Click="Button_Click" Grid.Row="1" Grid.Column="2" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <Button x:Name="Button_2_2" Click="Button_Click" Grid.Row="2" Grid.Column="2" FontSize="100px" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+        <TextBlock x:Name="Player1Score" Grid.Row="3" Grid.Column="0" FontSize="20px" FontWeight="Bold" FontFamily="Comic Sans Ms" Margin="5,0,0,0" Grid.RowSpan="2" Foreground="Blue"/>
+        <Button x:Name="reset" Click="Button_Reset" Grid.Row="3" Grid.Column="1" FontSize="20px" FontWeight="Bold" FontFamily="Comic Sans Ms" Content="Restart"/>
+        <TextBlock x:Name="Player2Score" Grid.Row="3" Grid.Column="2" FontSize="20px" FontWeight="Bold" FontFamily="Comic Sans Ms" Foreground="red"/>
     </Grid>
 </Window>
