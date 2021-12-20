@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-
 namespace tictactoe
 {
     /// <summary>
@@ -53,10 +52,23 @@ namespace tictactoe
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Player ^= true;
-            Counter++;
 
             var button = sender as Button;
-            button.Content = Player ? "X" : "O";
+            if (button.Content == "")
+            {
+                Counter++;
+                button.Content = Player ? "X" : "O";
+            }
+
+            if (button.Content == "X")
+            {
+                button.Foreground = Brushes.Blue;
+            } 
+            else
+            {
+                button.Foreground = Brushes.Red;
+            }
+
 
             if (Player1Win())
             {
@@ -77,7 +89,7 @@ namespace tictactoe
             }
             if (Draw())
             {
-                MessageBox.Show("Draw! Congratulations! Start new game.", "TicTacToe", MessageBoxButton.OK);
+                MessageBox.Show("Draw! Start new game.", "TicTacToe", MessageBoxButton.OK);
                 NewGame();
                 Player1Score.Text = "PLAYER 1 (X) score : " + scoreplayer1.ToString();
                 Player2Score.Text = "PLAYER 2 (O) score : " + scoreplayer2.ToString();
@@ -212,6 +224,13 @@ namespace tictactoe
                 return true;
             }
             return false;
+        }
+        private void Button_Reset(object sender, RoutedEventArgs e)
+        {
+            scoreplayer1 = 0;
+            scoreplayer2 = 0;
+            Player1Score.Text = "PLAYER 1 (X) score : " + scoreplayer1.ToString();
+                Player2Score.Text = "PLAYER 2 (O) score : " + scoreplayer2.ToString();
         }
     }
 }
