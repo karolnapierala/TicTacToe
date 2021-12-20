@@ -9,8 +9,11 @@ namespace tictactoe
     /// </summary>
     public partial class MainWindow : Window
     {
-        public bool Player1 { get; set; } = true;
+        public bool Player { get; set; } = true;
         public int Counter { get; set; }
+
+        int scoreplayer1;
+        int scoreplayer2;
         public MainWindow()
         {
             MessageBox.Show("Start the game!", "TicTacToe", MessageBoxButton.OK);
@@ -18,10 +21,13 @@ namespace tictactoe
             InitializeComponent();
 
             NewGame();
+
+            Player1Score.Text = "PLAYER 1 (X) score : " + scoreplayer1.ToString();
+            Player2Score.Text = "PLAYER 2 (O) score : " + scoreplayer2.ToString();
         }
         public void NewGame()
         {
-            Player1 = false;
+            Player = false;
             Counter = 0;
             Button_0_0.Content = string.Empty;
             Button_1_0.Content = string.Empty;
@@ -46,27 +52,35 @@ namespace tictactoe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Player1 ^= true;
+            Player ^= true;
             Counter++;
 
             var button = sender as Button;
-            button.Content = Player1 ? "X" : "O";
+            button.Content = Player ? "X" : "O";
 
             if (Player1Win())
             {
                 MessageBox.Show("Player1(X) win! Congratulations! Start new game.", "TicTacToe", MessageBoxButton.OK);
+                scoreplayer1++;
                 NewGame();
+                Player1Score.Text = "PLAYER 1 (X) score : " + scoreplayer1.ToString();
+                Player2Score.Text = "PLAYER 2 (O) score : " + scoreplayer2.ToString();
             }
 
             if (Player2Win())
             {
                 MessageBox.Show("Player2(O) win! Congratulations! Start new game.", "TicTacToe", MessageBoxButton.OK);
+                scoreplayer2++;
                 NewGame();
+                Player1Score.Text = "PLAYER 1 (X) score : " + scoreplayer1.ToString();
+                Player2Score.Text = "PLAYER 2 (O) score : " + scoreplayer2.ToString();
             }
             if (Draw())
             {
                 MessageBox.Show("Draw! Congratulations! Start new game.", "TicTacToe", MessageBoxButton.OK);
                 NewGame();
+                Player1Score.Text = "PLAYER 1 (X) score : " + scoreplayer1.ToString();
+                Player2Score.Text = "PLAYER 2 (O) score : " + scoreplayer2.ToString();
             }
         }
 
